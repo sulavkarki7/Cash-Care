@@ -1,3 +1,4 @@
+import 'package:cashcarefrontend/welcome_screen.dart';
 import 'package:get/get.dart';
 
 class CashCareRoute {
