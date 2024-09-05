@@ -1,6 +1,3 @@
-import "package:walletwise/data/graph_data.dart";
-import "package:walletwise/models/item.dart";
-
 class Category {
   final int id;
   final String category;

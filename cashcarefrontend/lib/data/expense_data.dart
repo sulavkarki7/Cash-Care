@@ -1,0 +1,30 @@
+import "package:get/get.dart";
+
+class ExpenseData {
+  static void updateChart() {
+    itemPieDataList.clear();
+    fetchedItem.forEach((item) {
+      itemPieDataList
+          .add(PieData(name: item.name, value: item.amount.toDouble()));
+    });
+  }
+
+  static List<Expense> expenseList = [
+    Expense(amount: 480, category: 'food', name: "eggs")
+  ];
+  //all the available Category
+  static List<ExpenseCategory> categoryList = [];
+
+  static RxList<Category> userCategoryList = <Category>[
+    //Category.withAmount(category: "food", id: 3, amount: 400),
+  ].obs;
+  static RxList<PieData> itemPieDataList = <PieData>[].obs;
+  static RxList<Category> detailedCategory = <Category>[].obs;
+  static RxList<Item> fetchedItem = <Item>[].obs;
+  static RxList<PieData> categoryPieData = [
+    PieData(name: "Eggs", value: 200),
+    PieData(name: "Eggs", value: 200),
+    PieData(name: "Bread", value: 60),
+    PieData(name: "Banana", value: 300)
+  ].obs;
+}

@@ -1,5 +1,3 @@
-import "package:walletwise/models/stock.dart";
-
 class BoughtStock {
   String? date;
   Stock stock;
