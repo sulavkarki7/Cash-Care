@@ -1,0 +1,43 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+class SignUpController extends ApiToken {
+  //getting the single instance of class all over the application
+  static SignUpController get instance => Get.find();
+  final firstName = TextEditingController();
+  final lastName = TextEditingController();
+  final email = TextEditingController();
+  final userName = TextEditingController();
+  final password = TextEditingController();
+  final confirmPassword = TextEditingController();
+  final phoneNumber = TextEditingController();
+  GlobalKey<FormState> signupFormkey = GlobalKey<FormState>();
+  Future<dynamic> signUp() async {
+    Object body = {
+      'email': email.text,
+      'password': password.text,
+      'name': '${firstName.text} ${lastName.text}',
+      'password_confirmation': confirmPassword.text,
+      'phone_number': phoneNumber.text
+    };
+    if (!signupFormkey.currentState!.validate()) {
+      return;
+    }
+    try {
+      await FetchAPI(ApiUrls.signupUrl, HttpMethod.post, body: body)
+          .fetchUnauthorizedAPI()
+          .then((response) => _handleSucessfullSingup(response));
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  void _handleSucessfullSingup(response) {
+    print(response.body);
+    if (response.statusCode != null) {
+      if (response.statusCode == 200) {
+        Get.to(const Login());
+      }
+    }
+  }
+}
