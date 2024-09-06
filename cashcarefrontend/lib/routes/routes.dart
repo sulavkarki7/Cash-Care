@@ -1,3 +1,5 @@
+import 'package:cashcarefrontend/features/auth/screen/login/login_view.dart';
+import 'package:cashcarefrontend/features/splash_screen.dart';
 import 'package:cashcarefrontend/welcome_screen.dart';
 import 'package:get/get.dart';
 

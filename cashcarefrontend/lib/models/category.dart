@@ -1,3 +1,6 @@
+import 'package:cashcarefrontend/data/graph_data.dart';
+import 'package:cashcarefrontend/models/item.dart';
+
 class Category {
   final int id;
   final String category;

@@ -1,5 +1,4 @@
-import 'package:walletwise/models/bought_stock.dart';
-import 'package:walletwise/models/stock.dart';
+import 'package:cashcarefrontend/models/stock.dart';
 
 class BoughtStock {
   Stock stock;

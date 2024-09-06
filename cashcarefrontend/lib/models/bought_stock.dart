@@ -1,3 +1,5 @@
+import 'package:cashcarefrontend/models/stock.dart';
+
 class BoughtStock {
   String? date;
   Stock stock;
