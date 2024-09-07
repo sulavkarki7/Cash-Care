@@ -1,72 +1,77 @@
-import 'package:cashcarefrontend/constants/app_icon.dart';
+import 'package:cashcarefrontend/models/item.dart';
 import 'package:flutter/material.dart';
 
-class IncomeCard extends StatelessWidget {
-  final Category category;
+class ItemCard extends StatelessWidget {
+  final String title;
+  final int amount;
+  final String date;
+  final Item item;
 
-  const IncomeCard({Key? key, required this.category}) : super(key: key);
+  const ItemCard({
+    Key? key,
+    required this.title,
+    required this.item,
+    required this.amount,
+    required this.date,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MouseRegion(
-      cursor: SystemMouseCursors.click,
-      child: GestureDetector(
-        onTap: () {
-          // Navigate to the detail page when the card is tapped
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => IncomeCategoryScreen(
-                id: category.id,
-                category: category.category,
-                total: category.amount.toInt(),
-              ),
-            ),
-          );
-        },
-        child: Card(
-          elevation: 4,
-          color: Colors.grey[900], // Adjusted card color to match background
+    print(
+      this.title,
+    );
+
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      child: Card(
+        elevation: 4,
+        color: Colors.grey[850], // Dark grey color for the card
+        margin: const EdgeInsets.symmetric(vertical: 4),
+        child: Container(
+          constraints: BoxConstraints(maxWidth: 280), // Slimmer card
           child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
+            padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const CircleAvatar(
-                  backgroundColor: Colors.green,
-                  radius: 30,
-                  child: Icon(
-                    AppIcons.transportation,
-                    color: Colors.white,
-                    size: 30,
-                  ),
-                ),
-                const SizedBox(width: 16),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Text(
-                        category.category,
-                        style: const TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Colors
-                              .white, // Text color adjusted for visibility
-                        ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      title,
+                      style: const TextStyle(
+                        fontSize: 18, // Slightly smaller font
+                        fontWeight: FontWeight.w600,
+                        color: Colors.white, // Softer black color
                       ),
-                      const SizedBox(height: 8),
-                      Text(
-                        "Rs ${category.amount.toString()}",
-                        style: const TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w700,
-                          color: Colors.green,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text(
+                          "Rs $amount",
+                          style: TextStyle(
+                            fontSize: 16, // Smaller font for amount
+                            fontWeight: FontWeight.w700,
+                            color: item.identifier == "income"
+                                ? Colors.green[700] // Softer green
+                                : Colors.red[600], // Softer red
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
+                        const SizedBox(height: 4),
+                        Text(
+                          date,
+                          style: TextStyle(
+                            //fontStyle: FontStyle.italic,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.grey[300], // Softer grey color
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ],
             ),
