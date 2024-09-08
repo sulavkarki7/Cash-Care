@@ -1,8 +1,10 @@
 import 'package:cashcarefrontend/common/widgets/divider.dart';
 import 'package:cashcarefrontend/common/widgets/social_buttons.dart';
+import 'package:cashcarefrontend/controllers/auth/login_controller.dart';
 import 'package:cashcarefrontend/features/auth/screen/password_config/forget_password.dart';
 import 'package:cashcarefrontend/features/auth/screen/signup/signup_view.dart';
 import 'package:cashcarefrontend/features/auth/screen/terms_&_conditions/terms_and_conditions_page.dart';
+import 'package:cashcarefrontend/utils/validators/validation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';

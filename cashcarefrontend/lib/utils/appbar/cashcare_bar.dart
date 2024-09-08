@@ -1,4 +1,5 @@
 import 'package:cashcarefrontend/constants/app_text.dart';
+import 'package:cashcarefrontend/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

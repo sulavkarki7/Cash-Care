@@ -1,3 +1,4 @@
+import 'package:cashcarefrontend/data/graph_data.dart';
 import 'package:get/get.dart';
 
 class BalanceData {

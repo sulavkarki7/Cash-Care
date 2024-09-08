@@ -1,3 +1,4 @@
+import "package:cashcarefrontend/models/saving.dart";
 import "package:get/get.dart";
 
 class SavingGoalData {

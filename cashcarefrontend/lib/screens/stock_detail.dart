@@ -1,6 +1,7 @@
 import 'package:cashcarefrontend/constants/app_colors.dart';
 import 'package:cashcarefrontend/controllers/stocks/stock_fetch_controller.dart';
 import 'package:cashcarefrontend/models/stock.dart';
+import 'package:cashcarefrontend/screens/stock_insights.dart';
 import 'package:cashcarefrontend/theme/theme_constant.dart';
 import 'package:cashcarefrontend/utils/appbar/cashcare_bar.dart';
 import 'package:cashcarefrontend/utils/cards/stock_card.dart';

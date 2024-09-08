@@ -1,4 +1,7 @@
 import 'package:cashcarefrontend/constants/app_colors.dart';
+import 'package:cashcarefrontend/controllers/stocks/stock_fetch_controller.dart';
+import 'package:cashcarefrontend/models/stock.dart';
+import 'package:cashcarefrontend/screens/stock_detail.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

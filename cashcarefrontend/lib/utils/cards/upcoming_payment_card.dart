@@ -1,4 +1,5 @@
 import 'package:cashcarefrontend/constants/app_colors.dart';
+import 'package:cashcarefrontend/models/payment.dart';
 import 'package:flutter/material.dart';
 
 class UpcomingPaymentCard extends StatelessWidget {

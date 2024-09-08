@@ -1,3 +1,4 @@
+import 'package:cashcarefrontend/models/bank_account.dart';
 import 'package:get/get.dart';
 
 class BankAccountData {

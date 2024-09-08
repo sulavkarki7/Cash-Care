@@ -1,3 +1,7 @@
+import 'package:cashcarefrontend/screens/budget_screen.dart';
+import 'package:cashcarefrontend/screens/history_screen.dart';
+import 'package:cashcarefrontend/screens/main_screen.dart';
+import 'package:cashcarefrontend/screens/stock_screen.dart';
 import 'package:cashcarefrontend/theme/theme_constant.dart';
 import 'package:cashcarefrontend/utils/appbar/cashcare_bar.dart';
 import 'package:flutter/material.dart';

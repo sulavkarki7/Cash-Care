@@ -1,3 +1,4 @@
+import 'package:cashcarefrontend/models/transactionCard.dart';
 import 'package:flutter/material.dart';
 
 class TransactionCard extends StatelessWidget {

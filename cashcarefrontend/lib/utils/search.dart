@@ -1,3 +1,4 @@
+import 'package:cashcarefrontend/controllers/budget/asset_controller.dart';
 import 'package:flutter/material.dart';
 
 class SearchBar extends StatelessWidget {

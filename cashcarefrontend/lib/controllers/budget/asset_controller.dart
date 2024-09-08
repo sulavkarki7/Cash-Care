@@ -1,3 +1,5 @@
+import 'package:cashcarefrontend/data/stock_search_result.dart';
+import 'package:cashcarefrontend/models/stock.dart';
 import "package:flutter/material.dart";
 import 'dart:convert';
 import "package:get/get.dart";

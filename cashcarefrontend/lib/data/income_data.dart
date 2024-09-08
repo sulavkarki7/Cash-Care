@@ -1,3 +1,8 @@
+import "package:cashcarefrontend/data/graph_data.dart";
+import "package:cashcarefrontend/models/category.dart";
+import "package:cashcarefrontend/models/expense.dart";
+import "package:cashcarefrontend/models/income_category.dart";
+import "package:cashcarefrontend/models/item.dart";
 import "package:get/get.dart";
 
 class IncomeData {

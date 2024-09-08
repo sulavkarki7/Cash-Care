@@ -1,7 +1,9 @@
 import 'dart:developer';
 
+import 'package:cashcarefrontend/controllers/auth/signup_controller.dart';
 import 'package:cashcarefrontend/features/auth/screen/terms_&_conditions/terms_and_conditions_page.dart';
 import 'package:cashcarefrontend/theme/theme_constant.dart';
+import 'package:cashcarefrontend/utils/validators/validation.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

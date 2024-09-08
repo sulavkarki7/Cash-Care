@@ -1,3 +1,5 @@
+import 'package:cashcarefrontend/screens/expense_screen.dart';
+import 'package:cashcarefrontend/screens/income_screen.dart';
 import 'package:flutter/material.dart';
 
 class BudgetScreen extends StatefulWidget {

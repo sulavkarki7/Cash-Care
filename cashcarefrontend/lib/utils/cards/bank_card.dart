@@ -1,4 +1,5 @@
 import 'package:cashcarefrontend/constants/app_colors.dart';
+import 'package:cashcarefrontend/models/bank_account.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 

@@ -1,3 +1,5 @@
+import "package:cashcarefrontend/data/graph_data.dart";
+import "package:cashcarefrontend/models/stock.dart";
 import "package:get/get.dart";
 
 class StockData {

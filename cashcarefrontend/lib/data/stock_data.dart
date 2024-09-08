@@ -1,6 +1,5 @@
+import 'package:cashcarefrontend/models/BoughtStock.dart';
 import 'package:get/get.dart';
-import 'package:walletwise/models/stock.dart';
-import 'package:walletwise/models/bought_stock.dart';
 
 class UserStockData {
   static RxList<BoughtStock> boughtStockList = <BoughtStock>[

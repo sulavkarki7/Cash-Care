@@ -1,3 +1,6 @@
+import 'package:cashcarefrontend/constants/app_icon.dart';
+import 'package:cashcarefrontend/models/category.dart';
+import 'package:cashcarefrontend/screens/category_screen.dart';
 import 'package:flutter/material.dart';
 
 class ExpenseCard extends StatelessWidget {

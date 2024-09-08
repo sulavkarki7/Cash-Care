@@ -1,4 +1,6 @@
 import 'package:cashcarefrontend/controllers/modeloperation.dart';
+import 'package:cashcarefrontend/data/payment_data.dart';
+import 'package:cashcarefrontend/models/payment.dart';
 
 class PaymentController {
   static Future<void> fetchPayment() async {

@@ -1,4 +1,5 @@
 import 'package:another_flutter_splash_screen/another_flutter_splash_screen.dart';
+import 'package:cashcarefrontend/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {

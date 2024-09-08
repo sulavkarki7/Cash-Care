@@ -1,3 +1,6 @@
+import "package:cashcarefrontend/data/graph_data.dart";
+import "package:cashcarefrontend/models/assets.dart";
+import "package:cashcarefrontend/models/debt.dart";
 import "package:get/get.dart";
 
 class AssetDebtData {
