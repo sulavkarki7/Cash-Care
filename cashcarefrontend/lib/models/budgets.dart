@@ -1,13 +1,25 @@
-import 'package:cashcarefrontend/models/stock.dart';
+import 'package:cashcarefrontend/models/category.dart';
 
-class BoughtStock {
-  Stock stock;
-  String boughtDate;
-  double boughtUnit;
-  double boughtPrice;
-  BoughtStock(
-      {required this.stock,
-      required this.boughtDate,
-      required this.boughtUnit,
-      required this.boughtPrice});
+class Budget {
+  Category category;
+  int amount;
+  String duration;
+  Budget(
+      {required this.category, required this.amount, required this.duration});
+
+  factory Budget.fromJson(Map<String, dynamic> json) {
+    return switch (json) {
+      {
+        'category': String category,
+        'amount': int amount,
+        'duration': String duration,
+        'id': int id,
+      } =>
+        Budget(
+            category: Category.withAmount(id: id, category: category),
+            amount: amount,
+            duration: duration),
+      _ => throw const FormatException('Failed to the budget.'),
+    };
+  }
 }
