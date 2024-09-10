@@ -1,59 +1,100 @@
-import 'package:cashcarefrontend/data/stock_search_result.dart';
-import 'package:cashcarefrontend/models/stock.dart';
-import "package:flutter/material.dart";
 import 'dart:convert';
+import 'package:cashcarefrontend/api/urls/app_urls.dart';
+import 'package:cashcarefrontend/controllers/modeloperation.dart';
+import 'package:cashcarefrontend/data/asset_debt_data.dart';
+import 'package:cashcarefrontend/data/graph_data.dart';
+import 'package:cashcarefrontend/models/assets.dart';
+import 'package:cashcarefrontend/utils/forms/ccForm.dart';
+import 'package:cashcarefrontend/utils/snackbar.dart';
 import "package:get/get.dart";
+import 'package:flutter/material.dart';
 
-import 'dart:async';
+class AssetController extends Wwform {
+  final TextEditingController title = TextEditingController();
+  final TextEditingController amount = TextEditingController();
 
-class StockController {
-  Timer? searchFetchTimer;
-  static StockController get instance => Get.find();
-  final searchQuery = TextEditingController();
-
-//fetch the query from the server
-  Future<dynamic> fetchSearchQuery(query) async {
-    Object body = {'key': query};
-    await FetchAPI(ApiUrls.searchStocks, HttpMethod.post, body: body)
-        .fetchUnauthorizedAPI()
-        .then((response) => {updateSuggestion(response.body)});
-  }
-
-  //add the response to the data
-  void updateSuggestion(responseBody) {
-    final List<dynamic> jsonResponse = jsonDecode(responseBody);
-    StockData.searchList.clear(); // Clear the existing list before updating
-    // Convert each item in jsonResponse to a Stock object and add it to the RxList
-    for (var item in jsonResponse) {
-      StockData.searchList.add(Stock.fromJson(item));
+  // Method to validate and create a Saving object
+  Assets? createAsset() {
+    if (!formKey.currentState!.validate()) {
+      return null;
     }
+    return Assets(
+      amount: int.parse(amount.text).toDouble(),
+      name: title.text,
+    );
   }
 
-  //add the random stock to the data
-  static void randomStocks(responseBody) {
-    final List<dynamic> jsonResponse = jsonDecode(responseBody);
-    StockData.hotStock.clear();
-    for (var item in jsonResponse) {
-      StockData.hotStock.add(Stock.fromJson(item));
-    }
+  // Method to clear form fields
+  @override
+  void clearFields() {
+    amount.clear();
+    title.clear();
+    formState.value = 0;
   }
 
-//handle the change of the input
-  void onChange(string) {
-    searchFetchTimer?.cancel();
-    searchFetchTimer = Timer(Duration(milliseconds: 200), () {
-      if (searchQuery.text.trim().isNotEmpty) {
-        fetchSearchQuery(string);
+  static void update(response) async {
+    try {
+      final data = jsonDecode(response);
+      if (data.containsKey('asset')) {
+        Assets assets = Assets.fromJson(data['asset']);
+        AssetDebtData.assetsData.add(assets);
+        AssetDebtData.pieDataList
+            .add(PieData(name: assets.name, value: assets.amount));
       } else {
-        StockData.searchList.clear();
+        return;
       }
-    });
+    } catch (e) {
+      throw Exception('An error occurred: $e');
+    }
   }
 
-  //fetching the random stocks
-  static Future<dynamic> fetchRandomStocks() async {
-    await FetchAPI(ApiUrls.randomStocks, HttpMethod.post)
-        .fetchUnauthorizedAPI()
-        .then((response) => {randomStocks(response.body)});
+  //Upload the saving
+  Future<void> addAssets(BuildContext context) async {
+    formState.value = 1;
+    try {
+      await ModelOperation().add(
+          body: {
+            "name": title.text,
+            "amount": int.parse(amount.text).toString(),
+          },
+          url: ApiUrls.addAssets,
+          successAction: (response) {
+            try {
+              update(response);
+            } catch (e) {
+              throw Exception("Failed to update assets:$e");
+            }
+            Get.back();
+            clearFields();
+            WwSnackbar.builder(
+                context, "Sucesssfully Added", CCSnackbartype.success);
+          },
+          errorAction: () {
+            formState.value = 0;
+          });
+    } catch (e) {
+      formState.value = 0;
+    }
+  }
+
+//fetch the assets
+  static Future<void> getAssets(BuildContext context) async {
+    //formState.value = 1;
+    try {
+      ModelOperation.fetchFunction(ApiUrls.fetchAssets, Assets.fromJson,
+          listKey: "data",
+          targetList: AssetDebtData.assetsData, successAction: (response) {
+        try {
+          print(response);
+          AssetDebtData.updateChart();
+          //update(response);
+        } catch (e) {
+          throw Exception("Failed to update assets:$e");
+        }
+      });
+      AssetDebtData.updateChart();
+    } catch (e) {
+      //formState.value = 0;
+    }
   }
 }
