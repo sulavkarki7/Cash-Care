@@ -4,6 +4,9 @@ import 'package:cashcarefrontend/theme/theme_constant.dart';
 import 'package:cashcarefrontend/utils/appbar/cashcare_bar.dart';
 import 'package:cashcarefrontend/utils/cards/technical_insight_card.dart';
 import 'package:cashcarefrontend/utils/cards/warning_card.dart';
+import 'package:cashcarefrontend/utils/charts/stocks/forecast_chart.dart';
+import 'package:cashcarefrontend/utils/gaps/Xgap.dart';
+import 'package:cashcarefrontend/utils/section/stocks/lstm_section.dart';
 import 'package:flutter/material.dart';
 
 class StockInsights extends StatefulWidget {

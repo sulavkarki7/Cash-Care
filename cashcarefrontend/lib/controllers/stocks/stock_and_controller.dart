@@ -1,6 +1,9 @@
+import "package:cashcarefrontend/api/urls/app_urls.dart";
 import "package:cashcarefrontend/controllers/modeloperation.dart";
 import "package:cashcarefrontend/data/stock_data.dart";
 import "package:cashcarefrontend/models/BoughtStock.dart";
+import "package:cashcarefrontend/models/bought_stock.dart";
+import "package:cashcarefrontend/utils/forms/ccForm.dart";
 import "package:cashcarefrontend/utils/snackbar.dart";
 import "package:flutter/material.dart";
 import "package:get/get.dart";

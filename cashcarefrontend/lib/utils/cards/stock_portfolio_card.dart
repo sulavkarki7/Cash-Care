@@ -1,5 +1,7 @@
 import 'package:cashcarefrontend/controllers/stocks/stock_fetch_controller.dart';
-import 'package:cashcarefrontend/models/BoughtStock.dart';
+
+import 'package:cashcarefrontend/models/bought_stock.dart';
+import 'package:cashcarefrontend/utils/gaps/Xgap.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

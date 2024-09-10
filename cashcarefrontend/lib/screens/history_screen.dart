@@ -1,4 +1,6 @@
 import 'package:cashcarefrontend/controllers/state/history_controller.dart';
+import 'package:cashcarefrontend/screens/stock_record.dart';
+import 'package:cashcarefrontend/screens/transaction_record.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

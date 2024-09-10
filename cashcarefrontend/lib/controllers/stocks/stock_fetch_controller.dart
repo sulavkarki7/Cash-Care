@@ -1,6 +1,8 @@
 import "dart:convert";
 import "dart:convert";
 
+import "package:cashcarefrontend/api/fetcher.dart";
+import "package:cashcarefrontend/api/urls/app_urls.dart";
 import "package:cashcarefrontend/data/graph_data.dart";
 import "package:cashcarefrontend/data/stock_search_result.dart";
 import "package:cashcarefrontend/models/stock.dart";

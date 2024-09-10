@@ -1,3 +1,5 @@
+import 'package:cashcarefrontend/api/fetcher.dart';
+import 'package:cashcarefrontend/api/urls/app_urls.dart';
 import 'package:cashcarefrontend/data/stock_search_result.dart';
 import 'package:cashcarefrontend/models/stock.dart';
 import "package:flutter/material.dart";

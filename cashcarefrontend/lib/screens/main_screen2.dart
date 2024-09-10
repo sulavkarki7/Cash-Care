@@ -1,5 +1,7 @@
 import 'package:cashcarefrontend/utils/cards/profit_card.dart';
+import 'package:cashcarefrontend/utils/charts/bar_chart.dart';
 import 'package:cashcarefrontend/utils/date_range_picker.dart';
+import 'package:cashcarefrontend/utils/forms/income_expense.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatelessWidget {

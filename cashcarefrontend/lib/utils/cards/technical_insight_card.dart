@@ -1,3 +1,4 @@
+import 'package:cashcarefrontend/utils/hero_text/hero_text.dart';
 import 'package:flutter/material.dart';
 
 class TechnicalInsightCard extends StatelessWidget {

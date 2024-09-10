@@ -1,67 +1,116 @@
+import 'package:cashcarefrontend/constants/app_colors.dart';
+import 'package:cashcarefrontend/theme/theme_constant.dart';
+import 'package:cashcarefrontend/utils/forms/assets/asset_add.dart';
+import 'package:cashcarefrontend/utils/forms/bank/add_bank_acc.dart';
+import 'package:cashcarefrontend/utils/forms/debt/add_debt_form.dart';
+import 'package:cashcarefrontend/utils/forms/saving_goals/add_saving_goal.dart';
+import 'package:cashcarefrontend/utils/forms/stock/add_stock_form.dart';
 import 'package:flutter/material.dart';
-import 'package:syncfusion_flutter_charts/charts.dart';
+import 'package:get/get.dart';
 
-class LstmGraph extends StatelessWidget {
-  final List<double> ltpData; // Dynamic LTP data
-  LstmGraph({required this.ltpData, Key? key});
-
-  @override
-  Widget build(BuildContext context) {
-    final double chartWidth = ltpData.length * 10.0 * 0.9; // Adjusted width
-
-    // Create a TooltipBehavior instance
-    final TooltipBehavior tooltipBehavior = TooltipBehavior(
-      enable: true,
-      canShowMarker: true,
-      tooltipPosition:
-          TooltipPosition.pointer, // Position tooltip at the pointer
-      format: 'point.y', // Show only y value in the tooltip
-    );
-
-    return Container(
-      padding: const EdgeInsets.all(16.0),
-      child: SingleChildScrollView(
-        reverse: true,
-        scrollDirection: Axis.horizontal,
-        child: SizedBox(
-          width: chartWidth, // Apply the adjusted width
-          child: SfCartesianChart(
-            primaryXAxis: const NumericAxis(
-              edgeLabelPlacement: EdgeLabelPlacement.shift,
-              interval: 10, // Adjust interval for readability
-              majorGridLines: MajorGridLines(width: 0), // Hide grid lines
-            ),
-            primaryYAxis: const NumericAxis(
-              edgeLabelPlacement: EdgeLabelPlacement.shift,
-              interval: 50,
-              majorGridLines: MajorGridLines(width: 0), // Hide grid lines
-            ),
-            tooltipBehavior: tooltipBehavior, // Set tooltip behavior
-            series: <CartesianSeries>[
-              // Line series for LTP data
-              LineSeries<_ChartData, int>(
-                dataSource: List.generate(
-                  ltpData.length,
-                  (index) => _ChartData(index, ltpData[index]),
-                ),
-                xValueMapper: (_ChartData data, _) => data.x,
-                yValueMapper: (_ChartData data, _) => data.y,
-                name: 'LTP Data',
-                color: Colors.orange,
-                enableTooltip: true, // Enable tooltip for this series
-              ),
-              // Dotted line for y = yLine1
+class Dialogbuilder {
+  static void stockForm(BuildContext context, int stockId) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return Theme(
+          data: wwTheme, // Use dark theme
+          child: SimpleDialog(
+            contentPadding: const EdgeInsets.all(20),
+            backgroundColor: AppColors.black,
+            children: [
+              AddStockForm(
+                stockId: stockId,
+              )
             ],
           ),
-        ),
-      ),
+        );
+      },
     );
   }
-}
 
-class _ChartData {
-  final int x;
-  final double y;
-
-  _ChartData(this.x, this.y);
+  static void hello(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return Theme(
+          data: wwTheme, // Use dark theme
+          child: SimpleDialog(
+            backgroundColor: Colors.white, // Set background color to white
+            children: [
+              SimpleDialogOption(
+                onPressed: () {},
+                child: const Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 10.0),
+                  child: Text("New Buy",
+                      style: TextStyle(
+                          color: Colors.black87)), // Less intense black
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                child: Divider(height: 1, color: Colors.grey),
+              ),
+              SimpleDialogOption(
+                onPressed: () {
+                  Get.to(AddSavingGoalForm());
+                },
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 10.0),
+                  child: Text("Saving Goal",
+                      style: TextStyle(
+                          color: Colors.black87)), // Less intense black
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                child: Divider(height: 1, color: Colors.grey),
+              ),
+              SimpleDialogOption(
+                onPressed: () {
+                  Get.to(AddAssetForm());
+                },
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 10.0),
+                  child: Text("Assets",
+                      style: TextStyle(
+                          color: Colors.black87)), // Less intense black
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                child: Divider(height: 1, color: Colors.grey),
+              ),
+              SimpleDialogOption(
+                onPressed: () {
+                  Get.to(AddDebtForm());
+                },
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 10.0),
+                  child: Text("Debts",
+                      style: TextStyle(
+                          color: Colors.black87)), // Less intense black
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                child: Divider(height: 1, color: Colors.grey),
+              ),
+              SimpleDialogOption(
+                onPressed: () {
+                  Get.to(AddBankAccForm());
+                },
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 10.0),
+                  child: Text("Bank Account",
+                      style: TextStyle(
+                          color: Colors.black87)), // Less intense black
+                ),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
 }

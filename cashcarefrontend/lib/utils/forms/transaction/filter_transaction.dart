@@ -2,6 +2,7 @@ import 'package:cashcarefrontend/controllers/budget/transaction_record_controlle
 import 'package:cashcarefrontend/data/bank_account.dart';
 import 'package:cashcarefrontend/models/bank_account.dart';
 import 'package:cashcarefrontend/utils/date_picker.dart';
+import 'package:cashcarefrontend/utils/inputs/search_input.dart';
 import 'package:flutter/material.dart';
 
 class FilterTransaction extends StatefulWidget {

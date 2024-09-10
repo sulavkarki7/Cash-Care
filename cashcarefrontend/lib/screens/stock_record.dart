@@ -23,10 +23,11 @@ class _StockRecordState extends State<StockRecord> {
     return SingleChildScrollView(
         child: Column(children: [
       Obx(() => Wrap(
-          alignment: WrapAlignment.center,
-          children: UserStockData.boughtStockList.map((boughtStock) {
-            return StockPortfolioCard(boughtStock: boughtStock);
-          }).toList())),
+            alignment: WrapAlignment.center,
+            children: UserStockData.boughtStockList.map((boughtStock) {
+              return StockPortfolioCard(boughtStock: boughtStock);
+            }).toList(),
+          )),
     ]));
   }
 }

@@ -1,10 +1,13 @@
 import 'package:cashcarefrontend/constants/app_colors.dart';
 import 'package:cashcarefrontend/controllers/stocks/stock_fetch_controller.dart';
 import 'package:cashcarefrontend/models/stock.dart';
+import 'package:cashcarefrontend/screens/main_screen.dart';
 import 'package:cashcarefrontend/screens/stock_insights.dart';
 import 'package:cashcarefrontend/theme/theme_constant.dart';
 import 'package:cashcarefrontend/utils/appbar/cashcare_bar.dart';
 import 'package:cashcarefrontend/utils/cards/stock_card.dart';
+import 'package:cashcarefrontend/utils/charts/candle_chart.dart';
+import 'package:cashcarefrontend/utils/dialogs/DialogBuilder.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

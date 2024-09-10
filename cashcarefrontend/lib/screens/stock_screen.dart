@@ -1,4 +1,5 @@
 import 'package:cashcarefrontend/controllers/budget/asset_controller.dart';
+import 'package:cashcarefrontend/controllers/stocks/stock_search_controller.dart';
 import 'package:cashcarefrontend/data/stock_search_result.dart';
 import 'package:cashcarefrontend/screens/stock_detail.dart';
 import 'package:cashcarefrontend/theme/theme_constant.dart';

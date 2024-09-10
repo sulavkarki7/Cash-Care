@@ -1,4 +1,5 @@
 import 'package:cashcarefrontend/models/BoughtStock.dart';
+import 'package:cashcarefrontend/models/bought_stock.dart';
 import 'package:get/get.dart';
 
 class UserStockData {

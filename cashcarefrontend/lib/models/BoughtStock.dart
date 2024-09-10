@@ -1,11 +1,11 @@
 import 'package:cashcarefrontend/models/stock.dart';
 
-class BoughtStock {
+class BoughtStock1 {
   Stock stock;
   String boughtDate;
   double boughtUnit;
   double boughtPrice;
-  BoughtStock(
+  BoughtStock1(
       {required this.stock,
       required this.boughtDate,
       required this.boughtUnit,

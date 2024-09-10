@@ -1,6 +1,7 @@
 import 'package:cashcarefrontend/constants/app_colors.dart';
 import 'package:cashcarefrontend/models/saving.dart';
 import 'package:cashcarefrontend/screens/saving_screen.dart';
+import 'package:cashcarefrontend/utils/charts/saving_goal_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
