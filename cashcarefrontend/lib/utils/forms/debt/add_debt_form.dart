@@ -36,7 +36,6 @@ class AddDebtForm extends StatelessWidget {
                       enabledBorder: border,
                       focusedBorder: border,
                     ),
-                    keyboardType: TextInputType.number,
                   ),
                   SizedBox(height: 20),
                   TextFormField(
