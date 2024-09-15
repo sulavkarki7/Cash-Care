@@ -7,8 +7,8 @@ class Url {
 class ApiUrls {
   ApiUrls._();
   // static String baseUrl = "http://192.168.1.91:8000";
-  // static String baseUrl = "http://192.168.100.34:8000";
-  static String baseUrl = "http://192.168.1.76:8000";
+  static String baseUrl = "http://192.168.100.34:8000";
+
   static Url testUrl = Url('/api/test');
   static Url test2Url = Url('/api/test2');
 
@@ -90,8 +90,8 @@ class ApiUrls {
 
   //python url
   // static String pythonBaseUrl = "http://192.168.1.91:5000/";
-  // static String pythonBaseUrl = "http://192.168.100.34:5000/";
-  static String pythonBaseUrl = "http://192.168.1.76:5000/";
+  static String pythonBaseUrl = "http://192.168.100.34:5000/";
+
   static Url Function(dynamic, String) getStockInsights =
       (id, symbol) => Url("/get-stock-insights?id=$id&name=$symbol");
   static Url Function(dynamic, String) getStockChart =

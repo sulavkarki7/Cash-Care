@@ -13,7 +13,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class DailyIncomeForm extends StatelessWidget {
-  const DailyIncomeForm({Key? key}) : super(key: key);
+  const DailyIncomeForm({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +43,7 @@ class DailyIncomeForm extends StatelessWidget {
                   onSelection: (category) {
                     controller.selectedCategory =
                         category is IncomeCategory ? category : null;
-                    print(category.id);
+                    print(category.name);
                   },
                 ),
                 gapY("md"),
@@ -68,9 +68,8 @@ class DailyIncomeForm extends StatelessWidget {
                 ),
                 gapY("md"),
                 DatePicker(
-                  label: "Spent date",
-                  controller:
-                      controller.date, // Ensure this is a TextEditingController
+                  label: "Earned date",
+                  controller: controller.date,
                   firstDate: DateTime(2023),
                   lastDate: DateTime.now(),
                 ),
