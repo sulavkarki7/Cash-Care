@@ -69,3 +69,24 @@ final ThemeData wwTheme = ThemeData(
       unselectedItemColor: Color(0xff000000)),
   scaffoldBackgroundColor: blueColor,
 );
+
+final ThemeData lightTheme = ThemeData(
+  colorScheme: const ColorScheme(
+      brightness: Brightness.light,
+      primary: wwWhite, // Light background
+      onPrimary: Colors.black, // Text in dark color
+      secondary: glassWhite,
+      onSecondary: Colors.black,
+      error: Colors.black,
+      onError: Colors.black,
+      surface: wwWhite,
+      onSurface: Colors.black),
+  dialogBackgroundColor: wwWhite,
+  dialogTheme: DialogTheme(contentTextStyle: TextStyle(color: Colors.black)),
+  primarySwatch: Colors.blue,
+  bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      backgroundColor: wwWhite,
+      selectedItemColor: Colors.blue,
+      unselectedItemColor: Colors.black54),
+  scaffoldBackgroundColor: wwWhite, // Light mode background color
+);

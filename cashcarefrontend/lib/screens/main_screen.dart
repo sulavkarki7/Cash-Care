@@ -140,21 +140,6 @@ class MainScreen extends StatelessWidget {
                 )),
 
                 gap(20),
-                //UPCOMING PAYMENTS SECTION
-                title("Upcoming Payment"),
-                Obx(() => Wrap(
-                    alignment: WrapAlignment.center,
-                    children: PaymentData.paymentlist.map((payment) {
-                      return UpcomingPaymentCard(payment: payment);
-                    }).toList())),
-
-                //gapY("md"),
-                const SizedBox(
-                  height: 20,
-                ),
-                //  constraints: BoxConstraints(maxWidth: 500),
-                //  child: MyLineChart(getChartData()), // Add the line chart here
-                //),
               ],
             ),
           ),

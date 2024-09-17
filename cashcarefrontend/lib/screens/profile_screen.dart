@@ -1,6 +1,8 @@
+import 'package:cashcarefrontend/constants/app_constant.dart';
 import 'package:cashcarefrontend/controllers/auth/logout_controller.dart';
 import 'package:cashcarefrontend/features/auth/screen/terms_&_conditions/terms_and_conditions_page.dart';
 import 'package:cashcarefrontend/models/user.dart';
+import 'package:cashcarefrontend/theme/theme_constant.dart';
 import 'package:cashcarefrontend/utils/forms/change_password.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -54,9 +56,24 @@ class _ProfileScreenState extends State<ProfileScreen> {
             Center(
               child: Column(
                 children: [
-                  const CircleAvatar(
-                    radius: 50,
-                    backgroundImage: AssetImage('assets/profile_pic.jpg'),
+                  // const CircleAvatar(
+                  //   radius: 50,
+                  //   backgroundImage: AssetImage('assets/profile_pic.jpg'),
+                  // ),
+                  Container(
+                    height: 100,
+                    width: 100,
+                    decoration: const BoxDecoration(
+                        shape: BoxShape.circle, color: wwWhite),
+                    child: Center(
+                      child: Text(
+                          getFirstandLastNameInitals(
+                              _userName.toString().toUpperCase()),
+                          style: const TextStyle(
+                              fontSize: 40,
+                              fontWeight: FontWeight.bold,
+                              color: wwBlack)),
+                    ),
                   ),
                   const SizedBox(height: 20),
                   Text(

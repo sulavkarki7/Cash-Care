@@ -39,34 +39,6 @@ class Dialogbuilder {
             backgroundColor: Colors.white, // Set background color to white
             children: [
               SimpleDialogOption(
-                onPressed: () {},
-                child: const Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10.0),
-                  child: Text("New Buy",
-                      style: TextStyle(
-                          color: Colors.black87)), // Less intense black
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                child: Divider(height: 1, color: Colors.grey),
-              ),
-              SimpleDialogOption(
-                onPressed: () {
-                  Get.to(AddSavingGoalForm());
-                },
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10.0),
-                  child: Text("Saving Goal",
-                      style: TextStyle(
-                          color: Colors.black87)), // Less intense black
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                child: Divider(height: 1, color: Colors.grey),
-              ),
-              SimpleDialogOption(
                 onPressed: () {
                   Get.to(AddAssetForm());
                 },
@@ -103,6 +75,21 @@ class Dialogbuilder {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 10.0),
                   child: Text("Bank Account",
+                      style: TextStyle(
+                          color: Colors.black87)), // Less intense black
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                child: Divider(height: 1, color: Colors.grey),
+              ),
+              SimpleDialogOption(
+                onPressed: () {
+                  Get.to(AddSavingGoalForm());
+                },
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 10.0),
+                  child: Text("Saving Goal",
                       style: TextStyle(
                           color: Colors.black87)), // Less intense black
                 ),

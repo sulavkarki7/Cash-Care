@@ -4,6 +4,7 @@ import 'package:cashcarefrontend/data/user_data.dart';
 import 'package:cashcarefrontend/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class CashCareBar {
   static PreferredSizeWidget normalPageBar(title) {
@@ -51,34 +52,7 @@ class CashCareBar {
         style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
       ),
       centerTitle: true,
-      leading: GestureDetector(
-        onTap: () {
-          Get.to(ProfileScreen());
-        },
-        child: Container(
-          height: 60,
-          width: 60,
-          decoration: BoxDecoration(
-            border: Border.all(
-              color: Colors.yellow,
-              width: 2,
-            ),
-            color: Colors.blue,
-            // color: whiteColor,
-
-            shape: BoxShape.circle,
-            // border: Border.all(color: whiteColor, width: 1),
-          ),
-          child: Center(
-            child: Text(
-              getFirstandLastNameInitals(fullName.toString().toUpperCase()),
-              style: TextStyle(color: Colors.white, fontSize: 16),
-              // TextStyle(
-              //     color: primaryColor, fontSize: 16),
-            ),
-          ),
-        ),
-      ), // Ensures the title is centered horizontally
+      // Ensures the title is centered horizontally
       actions: [
         IconButton(
           iconSize: 30,
