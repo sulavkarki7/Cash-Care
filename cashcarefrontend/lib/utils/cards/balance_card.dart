@@ -22,8 +22,10 @@ class BalanceCard extends StatelessWidget {
                 constraints: const BoxConstraints(
                     minWidth: 400, maxWidth: 500, maxHeight: 250),
                 decoration: BoxDecoration(
-                  gradient: const LinearGradient(
-                      colors: [Color(0xff2517DB), Color(0xff1180D1)]),
+                  gradient: const LinearGradient(colors: [
+                    Color.fromARGB(255, 122, 124, 147),
+                    Color.fromARGB(255, 11, 104, 124)
+                  ]),
                   borderRadius: BorderRadius.circular(
                       16.0), // Optional: Adds rounded corners
                 ),

@@ -72,7 +72,7 @@ class CashCareBar {
           child: Center(
             child: Text(
               getFirstandLastNameInitals(fullName.toString().toUpperCase()),
-              style: TextStyle(color: Colors.pink, fontSize: 16),
+              style: TextStyle(color: Colors.white, fontSize: 16),
               // TextStyle(
               //     color: primaryColor, fontSize: 16),
             ),

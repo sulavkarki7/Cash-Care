@@ -5,9 +5,9 @@ class AppConstant {
 }
 
 String getFirstandLastNameInitals(String fullName) {
-  if (fullName.isEmpty) {
-    return 'N/A';
-  }
+  // if (fullName.isEmpty) {
+  //   return 'N/A';
+  // }
   if (fullName.split(' ').length == 1) {
     return fullName[0];
   }
