@@ -104,3 +104,14 @@ class NavigationController extends GetxController {
     HistoryScreen()
   ];
 }
+
+class ThemeController extends GetxController {
+  RxBool isDarkMode = true.obs; // Default to dark mode
+
+  ThemeData get currentTheme => isDarkMode.value ? wwTheme : lightTheme;
+
+  void toggleTheme() {
+    isDarkMode.value = !isDarkMode.value;
+    Get.changeTheme(isDarkMode.value ? wwTheme : lightTheme);
+  }
+}

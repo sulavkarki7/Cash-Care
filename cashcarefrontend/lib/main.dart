@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 void main() {
+  Get.put(ThemeController());
+
   // Get.put(StockFetchController());
   runApp(const App());
 }
@@ -16,6 +18,9 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      theme: wwTheme,
+      darkTheme: wwTheme,
+      themeMode: ThemeMode.dark,
       debugShowCheckedModeBanner: false,
       title: 'Cash Care',
       initialRoute: CashCareRoute.getHomeRoute(),

@@ -39,10 +39,6 @@ class _ExpenseScreenState extends State<ExpenseScreen> {
               padding: EdgeInsets.all(6),
               child: DropdownButtonExample(),
             ),
-            //const Text(
-            //  "Total:25000",
-            //  textAlign: TextAlign.center,
-            //),
             ExpenseBarChart(
               color: Color(0xFF8B0000),
               categories: ExpenseData.userCategoryList,

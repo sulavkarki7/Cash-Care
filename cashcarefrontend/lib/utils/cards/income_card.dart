@@ -1,3 +1,4 @@
+import 'package:cashcarefrontend/constants/app_constant.dart';
 import 'package:cashcarefrontend/constants/app_icon.dart';
 import 'package:cashcarefrontend/models/category.dart';
 import 'package:cashcarefrontend/screens/income_category_screen.dart';
@@ -34,14 +35,14 @@ class IncomeCard extends StatelessWidget {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const CircleAvatar(
+                CircleAvatar(
                   backgroundColor: Colors.green,
                   radius: 30,
-                  child: Icon(
-                    AppIcons.transportation,
-                    color: Colors.white,
-                    size: 30,
-                  ),
+                  child: Text(getFirstandLastNameInitals(category.category),
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                      )),
                 ),
                 const SizedBox(width: 16),
                 Expanded(

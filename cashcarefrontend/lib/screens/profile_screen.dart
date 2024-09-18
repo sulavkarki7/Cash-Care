@@ -2,9 +2,11 @@ import 'package:cashcarefrontend/constants/app_constant.dart';
 import 'package:cashcarefrontend/controllers/auth/logout_controller.dart';
 import 'package:cashcarefrontend/features/auth/screen/terms_&_conditions/terms_and_conditions_page.dart';
 import 'package:cashcarefrontend/models/user.dart';
+import 'package:cashcarefrontend/navigation_menu.dart';
 import 'package:cashcarefrontend/theme/theme_constant.dart';
 import 'package:cashcarefrontend/utils/forms/change_password.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -21,6 +23,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   String _userEmail = '';
   User? user;
   String _userName = '';
+  ThemeController themeController = Get.find<ThemeController>();
 
   @override
   void initState() {
@@ -94,6 +97,20 @@ class _ProfileScreenState extends State<ProfileScreen> {
             SizedBox(
               height: Get.height * 0.01,
             ),
+            ListTile(
+              leading: Icon(
+                themeController.isDarkMode.value
+                    ? Icons.light_mode
+                    : Icons.dark_mode,
+                color: Colors.white,
+              ),
+              title: const Text(
+                'Toggle Light/Dark Mode',
+                style: TextStyle(fontSize: 18, color: Colors.white),
+              ),
+              onTap: themeController.toggleTheme,
+            ),
+            Divider(color: Colors.grey[700]),
             ListTile(
               leading: const Icon(Icons.person_2_outlined, color: Colors.white),
               title: const Text(

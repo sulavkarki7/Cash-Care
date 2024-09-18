@@ -1,3 +1,4 @@
+import 'package:cashcarefrontend/constants/app_constant.dart';
 import 'package:cashcarefrontend/constants/app_icon.dart';
 import 'package:cashcarefrontend/models/category.dart';
 import 'package:cashcarefrontend/screens/category_screen.dart';
@@ -38,11 +39,11 @@ class BudgetCard extends StatelessWidget {
                 CircleAvatar(
                   backgroundColor: Colors.blue,
                   radius: 30,
-                  child: Icon(
-                    AppIcons.transportation,
-                    color: Colors.white,
-                    size: 30,
-                  ),
+                  child: Text(getFirstandLastNameInitals(category.category),
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                      )),
                 ),
                 const SizedBox(width: 16),
                 Expanded(
