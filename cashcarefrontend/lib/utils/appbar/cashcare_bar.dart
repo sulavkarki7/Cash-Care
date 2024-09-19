@@ -9,6 +9,12 @@ import 'package:shared_preferences/shared_preferences.dart';
 class CashCareBar {
   static PreferredSizeWidget normalPageBar(title) {
     return AppBar(
+      leading: IconButton(
+        icon: const Icon(Icons.arrow_back_ios),
+        onPressed: () {
+          Get.back();
+        },
+      ),
       automaticallyImplyLeading: true,
       title: Row(
         mainAxisAlignment: MainAxisAlignment.center,

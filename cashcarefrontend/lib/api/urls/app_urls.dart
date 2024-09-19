@@ -6,8 +6,8 @@ class Url {
 
 class ApiUrls {
   ApiUrls._();
-  // static String baseUrl = "http://192.168.1.91:8000";
-  static String baseUrl = "http://192.168.100.34:8000";
+  static String baseUrl = "http://192.168.1.91:8000";
+  // static String baseUrl = "http://192.168.100.34:8000";
 
   static Url testUrl = Url('/api/test');
   static Url test2Url = Url('/api/test2');

@@ -6,16 +6,19 @@ class CCTextfield extends StatelessWidget {
     required this.icon,
     required this.validator,
     required this.label,
+    this.KeyboardType,
     super.key,
   });
   final TextEditingController controller;
   final Widget icon;
   final String label;
   final String? Function(String?)? validator;
+  final KeyboardType;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      keyboardType: KeyboardType,
       controller: controller,
       validator: validator,
       decoration: InputDecoration(

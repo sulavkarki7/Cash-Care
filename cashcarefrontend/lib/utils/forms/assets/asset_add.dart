@@ -4,6 +4,7 @@ import 'package:cashcarefrontend/utils/appbar/cashcare_bar.dart';
 import 'package:cashcarefrontend/utils/gaps/Xgap.dart';
 import 'package:cashcarefrontend/utils/textfields/cc_submit.dart';
 import 'package:cashcarefrontend/utils/textfields/ww_textfield.dart';
+import 'package:cashcarefrontend/utils/validators/validation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -27,20 +28,24 @@ class AddAssetForm extends StatelessWidget {
                   const SizedBox(height: 20),
                   gapY('md'),
                   CCTextfield(
-                      label: "Name",
-                      controller: controller.title,
-                      icon: const Icon(Icons.title),
-                      validator: (value) {
-                        return null;
-                      }),
+                    label: "Asset Name",
+                    controller: controller.title,
+                    icon: const Icon(Icons.title),
+                    validator: (value) => WwValidator.isInputEmpty(value),
+                  ),
                   gapY('md'),
                   CCTextfield(
-                      label: "Amount",
-                      controller: controller.amount,
-                      icon: const Icon(Icons.attach_money),
-                      validator: (value) {
-                        return null;
-                      }),
+                    KeyboardType: TextInputType.number,
+                    label: "Amount",
+                    controller: controller.amount,
+                    icon: const Icon(Icons.attach_money),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return "Please enter the amount";
+                      }
+                      return null;
+                    },
+                  ),
                   gapY("md"),
                   CCSubmit(
                     onPressed: () {

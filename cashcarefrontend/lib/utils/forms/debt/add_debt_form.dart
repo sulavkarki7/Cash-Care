@@ -31,7 +31,7 @@ class AddDebtForm extends StatelessWidget {
                     controller: controller.title,
                     decoration: InputDecoration(
                       prefixIcon: Icon(Icons.title),
-                      labelText: "Name",
+                      labelText: "Debt Name",
                       border: border,
                       enabledBorder: border,
                       focusedBorder: border,
