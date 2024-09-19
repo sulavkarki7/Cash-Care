@@ -30,6 +30,9 @@ class RoutineExpenseForm extends StatelessWidget {
                   controller: controller.item,
                   icon: const Icon(Icons.title),
                   validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return "Please enter the Item";
+                    }
                     return null;
                   },
                   label: 'Item',
@@ -38,7 +41,7 @@ class RoutineExpenseForm extends StatelessWidget {
                 CCTextfield(
                   label: "period",
                   controller: controller.period,
-                  icon: const Icon(Icons.title),
+                  icon: const Icon(Icons.date_range),
                   validator: (value) {
                     return null;
                   },
@@ -48,7 +51,7 @@ class RoutineExpenseForm extends StatelessWidget {
                   searchList: ExpenseData.categoryList,
                   searchKeyExtractor: (items) =>
                       (items as ExpenseCategory).name,
-                  label: "Category",
+                  label: "Expense Category",
                   onSelection: (category) {
                     controller.selectedCategory =
                         category is ExpenseCategory ? category : null;
@@ -71,6 +74,9 @@ class RoutineExpenseForm extends StatelessWidget {
                   controller: controller.amount,
                   icon: const Icon(Icons.title),
                   validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return "Please enter the amount";
+                    }
                     return null;
                   },
                   label: 'Amount',

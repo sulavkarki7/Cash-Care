@@ -88,8 +88,8 @@ class _ExpenseScreenState extends State<ExpenseScreen> {
                           child: SingleChildScrollView(
                             controller: scrollController,
                             child: WwTab(
-                              tab1: 'daily',
-                              tab2: 'routine',
+                              tab1: 'Daily',
+                              tab2: 'Routine',
                               tab1Screen: Builder(
                                 builder: (context) => const DailyExpenseForm(),
                               ),

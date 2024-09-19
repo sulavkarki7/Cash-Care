@@ -30,15 +30,18 @@ class RoutineIncomeForm extends StatelessWidget {
                   controller: controller.item,
                   icon: const Icon(Icons.title),
                   validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return "Please enter the Source";
+                    }
                     return null;
                   },
-                  label: 'Item',
+                  label: 'Source',
                 ),
                 gapY("md"),
                 CCTextfield(
                   label: "period",
                   controller: controller.period,
-                  icon: const Icon(Icons.title),
+                  icon: const Icon(Icons.date_range),
                   validator: (value) {
                     return null;
                   },
@@ -48,7 +51,7 @@ class RoutineIncomeForm extends StatelessWidget {
                   searchList: ExpenseData.categoryList,
                   searchKeyExtractor: (items) =>
                       (items as ExpenseCategory).name,
-                  label: "Source",
+                  label: "Income Category",
                   onSelection: (category) {
                     controller.selectedCategory =
                         category is ExpenseCategory ? category : null;
@@ -68,8 +71,11 @@ class RoutineIncomeForm extends StatelessWidget {
                 gapY("md"),
                 CCTextfield(
                   controller: controller.amount,
-                  icon: const Icon(Icons.title),
+                  icon: const Icon(Icons.attach_money),
                   validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return "Please enter the amount";
+                    }
                     return null;
                   },
                   label: 'Amount',

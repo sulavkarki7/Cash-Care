@@ -3,6 +3,7 @@ import 'package:cashcarefrontend/controllers/auth/logout_controller.dart';
 import 'package:cashcarefrontend/features/auth/screen/terms_&_conditions/terms_and_conditions_page.dart';
 import 'package:cashcarefrontend/models/user.dart';
 import 'package:cashcarefrontend/navigation_menu.dart';
+import 'package:cashcarefrontend/screens/settings_screen.dart';
 import 'package:cashcarefrontend/theme/theme_constant.dart';
 import 'package:cashcarefrontend/utils/forms/change_password.dart';
 import 'package:flutter/material.dart';
@@ -98,20 +99,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
               height: Get.height * 0.01,
             ),
             ListTile(
-              leading: Icon(
-                themeController.isDarkMode.value
-                    ? Icons.light_mode
-                    : Icons.dark_mode,
-                color: Colors.white,
-              ),
-              title: const Text(
-                'Toggle Light/Dark Mode',
-                style: TextStyle(fontSize: 18, color: Colors.white),
-              ),
-              onTap: themeController.toggleTheme,
-            ),
-            Divider(color: Colors.grey[700]),
-            ListTile(
               leading: const Icon(Icons.person_2_outlined, color: Colors.white),
               title: const Text(
                 'My Information',
@@ -121,23 +108,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ),
             Divider(color: Colors.grey[700]),
             ListTile(
-              leading: const Icon(Icons.lock_outline, color: Colors.white),
-              title: const Text(
-                'Change Password',
-                style: TextStyle(fontSize: 18, color: Colors.white),
-              ),
-              onTap: () {
-                Get.to(const ChangePasswordForm());
-              },
-            ),
-            Divider(color: Colors.grey[700]),
-            ListTile(
               leading: const Icon(Icons.settings_outlined, color: Colors.white),
               title: const Text(
                 'Settings',
                 style: TextStyle(fontSize: 18, color: Colors.white),
               ),
-              onTap: () {},
+              onTap: () {
+                Get.to(() => SettingsScreen());
+              },
             ),
             Divider(color: Colors.grey[700]),
             ListTile(
@@ -162,7 +140,56 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 style: TextStyle(fontSize: 18, color: Colors.white),
               ),
               onTap: () {
-                LogoutController.logout();
+                showDialog(
+                    context: context,
+                    builder: (
+                      BuildContext context,
+                    ) {
+                      return AlertDialog(
+                        backgroundColor: Colors.grey[900],
+                        // actionsAlignment: MainAxisAlignment.spaceEvenly,
+                        title: const Text('Logout'),
+                        contentTextStyle:
+                            TextStyle(fontSize: 18, color: wwWhite),
+                        content: const Text('Are you sure you want to logout?'),
+                        actions: [
+                          Container(
+                            width: Get.width * 0.3,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: TextButton(
+                              style: TextButton.styleFrom(
+                                foregroundColor: wwBlack,
+                                backgroundColor: wwWhite,
+                              ),
+                              onPressed: () {
+                                LogoutController.logout();
+                              },
+                              child: const Text('Yes'),
+                            ),
+                          ),
+                          Container(
+                            width: Get.width * 0.3,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: TextButton(
+                              style: TextButton.styleFrom(
+                                foregroundColor: wwWhite,
+                                backgroundColor: grey.withOpacity(0.2),
+                              ),
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                              child: const Text('No'),
+                            ),
+                          ),
+                        ],
+                      );
+                    });
+
+                // LogoutController.logout();
               },
             ),
             Divider(color: Colors.grey[700]),

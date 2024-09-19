@@ -30,6 +30,9 @@ class DailyExpenseForm extends StatelessWidget {
                   controller: controller.item,
                   icon: const Icon(Icons.title),
                   validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return "Please enter the Item";
+                    }
                     return null;
                   },
                   label: 'Item',
@@ -39,7 +42,7 @@ class DailyExpenseForm extends StatelessWidget {
                   searchList: ExpenseData.categoryList,
                   searchKeyExtractor: (items) =>
                       (items as ExpenseCategory).name,
-                  label: "Category",
+                  label: "Expense Category",
                   onSelection: (category) {
                     controller.selectedCategory =
                         category is ExpenseCategory ? category : null;
@@ -60,8 +63,11 @@ class DailyExpenseForm extends StatelessWidget {
                 gapY("md"),
                 CCTextfield(
                   controller: controller.amount,
-                  icon: const Icon(Icons.title),
+                  icon: const Icon(Icons.attach_money),
                   validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return "Please enter the amount";
+                    }
                     return null;
                   },
                   label: 'Amount',
