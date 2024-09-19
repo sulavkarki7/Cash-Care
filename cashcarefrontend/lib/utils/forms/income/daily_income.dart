@@ -39,7 +39,7 @@ class DailyIncomeForm extends StatelessWidget {
                 SearchInput(
                   searchList: IncomeData.allCategories,
                   searchKeyExtractor: (items) => (items as IncomeCategory).name,
-                  label: "Category",
+                  label: "Inocome Category",
                   onSelection: (category) {
                     controller.selectedCategory =
                         category is IncomeCategory ? category : null;
@@ -59,9 +59,13 @@ class DailyIncomeForm extends StatelessWidget {
                 ),
                 gapY("md"),
                 CCTextfield(
+                  KeyboardType: TextInputType.number,
                   controller: controller.amount,
-                  icon: const Icon(Icons.title),
+                  icon: Icon(Icons.attach_money),
                   validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return "Please enter the amount";
+                    }
                     return null;
                   },
                   label: 'Amount',

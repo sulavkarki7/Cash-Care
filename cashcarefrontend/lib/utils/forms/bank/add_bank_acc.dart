@@ -26,28 +26,40 @@ class AddBankAccForm extends StatelessWidget {
                 children: [
                   const SizedBox(height: 20),
                   CCTextfield(
-                      label: "BankName",
-                      controller: controller.name,
-                      icon: const Icon(Icons.title),
-                      validator: (value) {
-                        return null;
-                      }),
+                    label: "Bank Name",
+                    controller: controller.name,
+                    icon: const Icon(Icons.account_balance),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return "Please enter the Bank Name";
+                      }
+                      return null;
+                    },
+                  ),
                   gapY("md"),
                   CCTextfield(
-                      controller: controller.accountNumber,
-                      label: "Account Numbers",
-                      icon: const Icon(Icons.numbers),
-                      validator: (value) {
-                        return null;
-                      }),
+                    controller: controller.accountNumber,
+                    label: "Account Number",
+                    icon: const Icon(Icons.numbers),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return "Please enter the Account Number";
+                      }
+                      return null;
+                    },
+                  ),
                   gapY("md"),
                   CCTextfield(
-                      label: "Amount",
-                      controller: controller.amount,
-                      icon: const Icon(Icons.money),
-                      validator: (value) {
-                        return null;
-                      }),
+                    label: "Amount",
+                    controller: controller.amount,
+                    icon: const Icon(Icons.attach_money),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return "Please enter the amount";
+                      }
+                      return null;
+                    },
+                  ),
                   gapY("md"),
                   CCSubmit(
                     onPressed: () {

@@ -38,20 +38,28 @@ class AddSavingGoalForm extends StatelessWidget {
                 children: [
                   const SizedBox(height: 20),
                   CCTextfield(
-                      label: "Name",
-                      controller: controller.name,
-                      icon: const Icon(Icons.title),
-                      validator: (value) {
-                        return null;
-                      }),
+                    label: "Goal title",
+                    controller: controller.name,
+                    icon: const Icon(Icons.title),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return "Please enter the Goal title";
+                      }
+                      return null;
+                    },
+                  ),
                   gapY("md"),
                   CCTextfield(
-                      label: "Amount",
-                      controller: controller.amount,
-                      icon: const Icon(Icons.title),
-                      validator: (value) {
-                        return null;
-                      }),
+                    label: "Amount",
+                    controller: controller.amount,
+                    icon: const Icon(Icons.attach_money),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return "Please enter the amount";
+                      }
+                      return null;
+                    },
+                  ),
                   const SizedBox(height: 20),
                   DatePicker(
                     controller: controller.endDate,
