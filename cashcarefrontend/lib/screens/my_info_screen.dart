@@ -45,7 +45,7 @@ class _MyInfoScreenState extends State<MyInfoScreen> {
       appBar: AppBar(
         iconTheme: const IconThemeData(color: Colors.white),
         title: const Text(
-          'Profile',
+          'My Information',
           style: TextStyle(color: Colors.white),
         ),
         backgroundColor: Colors.grey[900],
@@ -162,7 +162,7 @@ class _MyInfoScreenState extends State<MyInfoScreen> {
                   borderRadius: BorderRadius.circular(5)),
               width: Get.width,
               child: Text(
-                'Phn',
+                '9800000000',
                 style: TextStyle(
                     color: ccWhite, fontSize: 20, fontWeight: FontWeight.w600),
               ),
