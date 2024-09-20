@@ -18,8 +18,8 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      theme: wwTheme,
-      darkTheme: wwTheme,
+      theme: ccTheme,
+      darkTheme: ccTheme,
       themeMode: ThemeMode.dark,
       debugShowCheckedModeBanner: false,
       title: 'Cash Care',

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 enum CCSnackbartype { success, error }
 
-class WwSnackbar {
+class CCSnackbar {
   static void builder(
       BuildContext context, String message, CCSnackbartype type) {
     final backgroundColor =

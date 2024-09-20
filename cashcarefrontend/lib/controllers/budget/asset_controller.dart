@@ -9,7 +9,7 @@ import 'package:cashcarefrontend/utils/snackbar.dart';
 import "package:get/get.dart";
 import 'package:flutter/material.dart';
 
-class AssetController extends Wwform {
+class AssetController extends CCform {
   final TextEditingController title = TextEditingController();
   final TextEditingController amount = TextEditingController();
 
@@ -66,7 +66,7 @@ class AssetController extends Wwform {
             }
             Get.back();
             clearFields();
-            WwSnackbar.builder(
+            CCSnackbar.builder(
                 context, "Sucesssfully Added", CCSnackbartype.success);
           },
           errorAction: () {

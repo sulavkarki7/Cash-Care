@@ -13,7 +13,7 @@ import "package:flutter/material.dart";
 
 import "package:get/get.dart";
 
-class IncomeController extends Wwform {
+class IncomeController extends CCform {
   static IncomeController get instance => Get.find();
   final sheetController = Get.put(SheetController());
   final source = TextEditingController();
@@ -55,14 +55,14 @@ class IncomeController extends Wwform {
         url: ApiUrls.addExpense,
         successAction: (response) async {
           formState.value = 0;
-          WwSnackbar.builder(
+          CCSnackbar.builder(
               context, "Sucessfully Added", CCSnackbartype.success);
           sheetController.incomeShouldDismiss.value = true;
           fetchIncomes();
         },
         errorAction: () {
           formState.value = 0;
-          WwSnackbar.builder(
+          CCSnackbar.builder(
               context, "Error Occured while Adding", CCSnackbartype.success);
         },
       );
@@ -88,14 +88,14 @@ class IncomeController extends Wwform {
           print("hey");
           formState.value = 0;
 
-          WwSnackbar.builder(
+          CCSnackbar.builder(
               context, "Sucessfully Added", CCSnackbartype.success);
 
           sheetController.incomeShouldDismiss.value = true;
         },
         errorAction: () {
           formState.value = 0;
-          WwSnackbar.builder(
+          CCSnackbar.builder(
               context, "Error Occured while Adding", CCSnackbartype.success);
         },
       );

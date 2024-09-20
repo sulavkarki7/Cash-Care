@@ -14,7 +14,7 @@ import "package:cashcarefrontend/utils/snackbar.dart";
 import "package:flutter/material.dart";
 import "package:get/get.dart";
 
-class ExpenseController extends Wwform {
+class ExpenseController extends CCform {
   static ExpenseController get instance => Get.find();
   final item = TextEditingController();
   final amount = TextEditingController();
@@ -77,13 +77,13 @@ class ExpenseController extends Wwform {
           print("hey");
           formState.value = 0;
           sheetController.expenseSheetDismiss.value = true;
-          WwSnackbar.builder(
+          CCSnackbar.builder(
               context, "Sucessfully Added", CCSnackbartype.success);
           PaymentController.fetchPayment();
         },
         errorAction: () {
           formState.value = 0;
-          WwSnackbar.builder(
+          CCSnackbar.builder(
               context, "Error Occured while Adding", CCSnackbartype.success);
         },
       );
@@ -113,12 +113,12 @@ class ExpenseController extends Wwform {
           BankAccController.fetchBankAccount();
           BalanceCardController.fetchBalanceCardData();
           formState.value = 0;
-          WwSnackbar.builder(
+          CCSnackbar.builder(
               context, "Sucessfully Added", CCSnackbartype.success);
         },
         errorAction: () {
           formState.value = 0;
-          WwSnackbar.builder(
+          CCSnackbar.builder(
               context, "Error Occured while Adding", CCSnackbartype.success);
         },
       );

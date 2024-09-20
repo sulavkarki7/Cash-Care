@@ -1,6 +1,6 @@
 import 'package:cashcarefrontend/utils/forms/ccForm.dart';
 
-class CashInHandController extends Wwform {
+class CashInHandController extends CCform {
   @override
   void clearFields() {}
 

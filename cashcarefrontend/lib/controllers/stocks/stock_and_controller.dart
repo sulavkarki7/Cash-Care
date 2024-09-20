@@ -1,7 +1,6 @@
 import "package:cashcarefrontend/api/urls/app_urls.dart";
 import "package:cashcarefrontend/controllers/modeloperation.dart";
 import "package:cashcarefrontend/data/stock_data.dart";
-import "package:cashcarefrontend/models/BoughtStock.dart";
 import "package:cashcarefrontend/models/bought_stock.dart";
 import "package:cashcarefrontend/utils/forms/ccForm.dart";
 import "package:cashcarefrontend/utils/snackbar.dart";
@@ -9,7 +8,7 @@ import "package:flutter/material.dart";
 import "package:get/get.dart";
 import "dart:convert";
 
-class StockAddController extends Wwform {
+class StockAddController extends CCform {
   static StockAddController get instance => Get.find();
   final TextEditingController boughtDate = TextEditingController();
   final TextEditingController unit = TextEditingController();
@@ -28,7 +27,7 @@ class StockAddController extends Wwform {
             "date": boughtDate.text
           },
           successAction: (response) {
-            WwSnackbar.builder(
+            CCSnackbar.builder(
                 context, "SuccessFullyAddec", CCSnackbartype.success);
             clearFields();
           },
@@ -77,7 +76,7 @@ class StockAddController extends Wwform {
           url: ApiUrls.addStocks,
           successAction: (response) {
             formState.value = 0;
-            WwSnackbar.builder(
+            CCSnackbar.builder(
                 context, "SuccessFully Added", CCSnackbartype.success);
           },
           errorAction: () {

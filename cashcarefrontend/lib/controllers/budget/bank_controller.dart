@@ -9,7 +9,7 @@ import 'package:cashcarefrontend/utils/snackbar.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 
-class BankAccController extends Wwform {
+class BankAccController extends CCform {
   final TextEditingController name = TextEditingController();
   final TextEditingController accountNumber = TextEditingController();
   final TextEditingController amount = TextEditingController();
@@ -62,7 +62,7 @@ class BankAccController extends Wwform {
               BalanceCardController.fetchBalanceCardData();
               clearFields();
               Get.back();
-              WwSnackbar.builder(
+              CCSnackbar.builder(
                   context, "Sucesssfully Added", CCSnackbartype.success);
             },
             errorAction: () {
@@ -73,7 +73,7 @@ class BankAccController extends Wwform {
         formState.value = 0;
       }
     } else {
-      WwSnackbar.builder(context, "Invalid Inputs", CCSnackbartype.error);
+      CCSnackbar.builder(context, "Invalid Inputs", CCSnackbartype.error);
     }
   }
 

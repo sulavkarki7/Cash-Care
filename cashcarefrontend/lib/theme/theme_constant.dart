@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 //defining the color
 //for the main background
 //main color
-const Color wwBlack = Color(0xff111111);
-const Color wwPurple = Color(0xff1D1927);
-const Color wwWhite = Color(0xffF7F7F7);
-const Color wwGrey = Color(0x5cF7F7F7);
+const Color ccBlack = Color(0xff111111);
+const Color ccPurple = Color(0xff1D1927);
+const Color ccWhite = Color(0xffF7F7F7);
+const Color ccGrey = Color(0x5cF7F7F7);
 
 const darkGreen = Color(0xff244c14);
 const blueColor = Color(0xff004D40);
@@ -28,13 +28,13 @@ const greenShade = Color(0xff3E2723);
 
 final ThemeData myTheme = ThemeData(
   appBarTheme: AppBarTheme(
-    color: wwBlack,
+    color: ccBlack,
   ),
   colorScheme: ColorScheme(
       background: Colors.red,
       onBackground: Colors.white,
       brightness: Brightness.dark,
-      primary: wwBlack,
+      primary: ccBlack,
       onPrimary: Colors.white,
       secondary: glassWhite,
       onSecondary: Colors.white,
@@ -44,15 +44,15 @@ final ThemeData myTheme = ThemeData(
       onSurface: Colors.white),
   primarySwatch: Colors.blue,
   bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-      backgroundColor: wwPurple,
-      selectedItemColor: wwWhite,
-      unselectedItemColor: wwGrey),
-  scaffoldBackgroundColor: wwBlack,
+      backgroundColor: ccPurple,
+      selectedItemColor: ccWhite,
+      unselectedItemColor: ccGrey),
+  scaffoldBackgroundColor: ccBlack,
 );
-final ThemeData wwTheme = ThemeData(
+final ThemeData ccTheme = ThemeData(
   colorScheme: const ColorScheme(
       brightness: Brightness.dark,
-      primary: wwBlack,
+      primary: ccBlack,
       onPrimary: Colors.white,
       secondary: glassWhite,
       onSecondary: Colors.white,
@@ -73,20 +73,20 @@ final ThemeData wwTheme = ThemeData(
 final ThemeData lightTheme = ThemeData(
   colorScheme: const ColorScheme(
       brightness: Brightness.light,
-      primary: wwWhite, // Light background
+      primary: ccWhite, // Light background
       onPrimary: Colors.black, // Text in dark color
       secondary: glassWhite,
       onSecondary: Colors.black,
       error: Colors.black,
       onError: Colors.black,
-      surface: wwWhite,
+      surface: ccWhite,
       onSurface: Colors.black),
-  dialogBackgroundColor: wwWhite,
+  dialogBackgroundColor: ccWhite,
   dialogTheme: DialogTheme(contentTextStyle: TextStyle(color: Colors.black)),
   primarySwatch: Colors.blue,
   bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-      backgroundColor: wwWhite,
+      backgroundColor: ccWhite,
       selectedItemColor: Colors.blue,
       unselectedItemColor: Colors.black54),
-  scaffoldBackgroundColor: wwWhite, // Light mode background color
+  scaffoldBackgroundColor: ccWhite, // Light mode background color
 );

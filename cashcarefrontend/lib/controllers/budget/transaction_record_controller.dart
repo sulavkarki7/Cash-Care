@@ -6,7 +6,7 @@ import "package:cashcarefrontend/models/transactionCard.dart";
 import "package:cashcarefrontend/utils/forms/ccForm.dart";
 import "package:flutter/material.dart";
 
-class TransactionRecordController extends Wwform {
+class TransactionRecordController extends CCform {
   final TextEditingController to = TextEditingController(text: "");
   final TextEditingController from = TextEditingController(text: "");
   BankAccount? selectedBankAccount;

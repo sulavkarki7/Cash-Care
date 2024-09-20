@@ -3,6 +3,7 @@ import 'package:cashcarefrontend/controllers/auth/logout_controller.dart';
 import 'package:cashcarefrontend/features/auth/screen/terms_&_conditions/terms_and_conditions_page.dart';
 import 'package:cashcarefrontend/models/user.dart';
 import 'package:cashcarefrontend/navigation_menu.dart';
+import 'package:cashcarefrontend/screens/my_info_screen.dart';
 import 'package:cashcarefrontend/screens/settings_screen.dart';
 import 'package:cashcarefrontend/theme/theme_constant.dart';
 import 'package:cashcarefrontend/utils/forms/change_password.dart';
@@ -60,25 +61,38 @@ class _ProfileScreenState extends State<ProfileScreen> {
             Center(
               child: Column(
                 children: [
-                  // const CircleAvatar(
-                  //   radius: 50,
-                  //   backgroundImage: AssetImage('assets/profile_pic.jpg'),
-                  // ),
-                  Container(
-                    height: 100,
-                    width: 100,
-                    decoration: const BoxDecoration(
-                        shape: BoxShape.circle, color: wwWhite),
-                    child: Center(
-                      child: Text(
-                          getFirstandLastNameInitals(
-                              _userName.toString().toUpperCase()),
-                          style: const TextStyle(
-                              fontSize: 40,
-                              fontWeight: FontWeight.bold,
-                              color: wwBlack)),
-                    ),
+                  SizedBox(
+                    height: Get.height * 0.01,
                   ),
+                  Container(
+                      height: Get.height * 0.2,
+                      width: Get.width * 0.98,
+                      decoration: BoxDecoration(
+                        color: grey.withOpacity(0.2),
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                      child: Center(
+                        child: SizedBox(
+                          height: Get.height * 0.2,
+                          width: 140,
+                          // color: Colors.amber,
+                          child: Container(
+                            height: 130,
+                            width: 130,
+                            decoration: BoxDecoration(
+                                color: ccWhite, shape: BoxShape.circle),
+                            child: Center(
+                              child: Text(
+                                  getFirstandLastNameInitals(
+                                      _userName.toString().toUpperCase()),
+                                  style: const TextStyle(
+                                      fontSize: 50,
+                                      fontWeight: FontWeight.bold,
+                                      color: ccBlack)),
+                            ),
+                          ),
+                        ),
+                      )),
                   const SizedBox(height: 20),
                   Text(
                     _userName,
@@ -104,7 +118,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 'My Information',
                 style: TextStyle(fontSize: 18, color: Colors.white),
               ),
-              onTap: () {},
+              onTap: () {
+                Get.to(() => MyInfoScreen());
+              },
             ),
             Divider(color: Colors.grey[700]),
             ListTile(
@@ -150,7 +166,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         // actionsAlignment: MainAxisAlignment.spaceEvenly,
                         title: const Text('Logout'),
                         contentTextStyle:
-                            TextStyle(fontSize: 18, color: wwWhite),
+                            TextStyle(fontSize: 18, color: ccWhite),
                         content: const Text('Are you sure you want to logout?'),
                         actions: [
                           Container(
@@ -160,8 +176,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             ),
                             child: TextButton(
                               style: TextButton.styleFrom(
-                                foregroundColor: wwBlack,
-                                backgroundColor: wwWhite,
+                                foregroundColor: ccBlack,
+                                backgroundColor: ccWhite,
                               ),
                               onPressed: () {
                                 LogoutController.logout();
@@ -176,7 +192,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             ),
                             child: TextButton(
                               style: TextButton.styleFrom(
-                                foregroundColor: wwWhite,
+                                foregroundColor: ccWhite,
                                 backgroundColor: grey.withOpacity(0.2),
                               ),
                               onPressed: () {

@@ -11,7 +11,7 @@ import "package:get/get.dart";
 
 import 'package:http/http.dart' as http;
 
-class SavinggoalController extends Wwform {
+class SavinggoalController extends CCform {
   final TextEditingController name = TextEditingController();
   final TextEditingController amount = TextEditingController();
   final TextEditingController endDate = TextEditingController();
@@ -54,7 +54,7 @@ class SavinggoalController extends Wwform {
 
   // Method to submit form data
   Future<void> addSaving(BuildContext context) async {
-    WwSnackbar.builder(context, "Waiting", CCSnackbartype.success);
+    CCSnackbar.builder(context, "Waiting", CCSnackbartype.success);
     validateForm();
     formState.value = 1;
     ModelOperation().add(
@@ -75,7 +75,7 @@ class SavinggoalController extends Wwform {
             SavingGoalData.savinglist.add(newSaving);
           }
           Get.back();
-          WwSnackbar.builder(
+          CCSnackbar.builder(
               context, "SuccessFully Added", CCSnackbartype.success);
           clearFields();
         },

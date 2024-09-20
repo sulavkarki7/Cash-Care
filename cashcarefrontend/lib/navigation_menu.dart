@@ -108,10 +108,10 @@ class NavigationController extends GetxController {
 class ThemeController extends GetxController {
   RxBool isDarkMode = true.obs; // Default to dark mode
 
-  ThemeData get currentTheme => isDarkMode.value ? wwTheme : lightTheme;
+  ThemeData get currentTheme => isDarkMode.value ? ccTheme : lightTheme;
 
   void toggleTheme() {
     isDarkMode.value = !isDarkMode.value;
-    Get.changeTheme(isDarkMode.value ? wwTheme : lightTheme);
+    Get.changeTheme(isDarkMode.value ? ccTheme : lightTheme);
   }
 }

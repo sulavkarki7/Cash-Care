@@ -14,7 +14,7 @@ class Dialogbuilder {
       context: context,
       builder: (BuildContext context) {
         return Theme(
-          data: wwTheme, // Use dark theme
+          data: ccTheme, // Use dark theme
           child: SimpleDialog(
             contentPadding: const EdgeInsets.all(20),
             backgroundColor: AppColors.black,
@@ -34,7 +34,7 @@ class Dialogbuilder {
       context: context,
       builder: (BuildContext context) {
         return Theme(
-          data: wwTheme, // Use dark theme
+          data: ccTheme, // Use dark theme
           child: SimpleDialog(
             backgroundColor: Colors.white, // Set background color to white
             children: [

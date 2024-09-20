@@ -33,6 +33,12 @@ class _SignUpFormState extends State<SignUpForm> {
     log('Email saved: $email');
   }
 
+  Future<void> _saveUserPhone(String phone) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setString('user_phone', phone);
+    log('Phone saved: $phone');
+  }
+
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(SignUpController());
@@ -261,7 +267,7 @@ class _SignUpFormState extends State<SignUpForm> {
                           const SnackBar(
                             content: Text(
                               'You have to agree to the terms and conditions',
-                              style: TextStyle(color: wwWhite),
+                              style: TextStyle(color: ccWhite),
                             ),
                             backgroundColor: Colors.red,
                           ),
@@ -272,6 +278,7 @@ class _SignUpFormState extends State<SignUpForm> {
                           await _saveUserName(controller.firstName.text +
                               ' ' +
                               controller.lastName.text);
+                          await _saveUserPhone(controller.phoneNumber.text);
                           controller.signUp(); // Proceed with the signup.
                         }
                       }

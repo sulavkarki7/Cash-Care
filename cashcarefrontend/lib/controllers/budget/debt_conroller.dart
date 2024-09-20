@@ -7,7 +7,7 @@ import 'package:cashcarefrontend/utils/snackbar.dart';
 import 'package:flutter/material.dart';
 import "package:get/get.dart";
 
-class DebtController extends Wwform {
+class DebtController extends CCform {
   final TextEditingController title = TextEditingController();
   final TextEditingController amount = TextEditingController();
 
@@ -35,7 +35,7 @@ class DebtController extends Wwform {
             successAction: (response) {
               Get.back();
               clearFields();
-              WwSnackbar.builder(
+              CCSnackbar.builder(
                   context, "Sucesssfully Added", CCSnackbartype.success);
             },
             errorAction: () {
@@ -45,7 +45,7 @@ class DebtController extends Wwform {
         formState.value = 0;
       }
     } else {
-      WwSnackbar.builder(context, "Invalid Inputs", CCSnackbartype.error);
+      CCSnackbar.builder(context, "Invalid Inputs", CCSnackbartype.error);
     }
   }
 
