@@ -78,9 +78,10 @@ flutter:
   assets:
     - assets/profile_pic.jpg
     - assets/chat.svg
-    - assets/mainbanner.png
+    - assets/mainbanner3.jpg
+    - assets/mainbanner3.png
     - assets/ccLogoDarkGrey.2.png
-    - assets/socials/google.png
+    - assets/google.png
 
     
 

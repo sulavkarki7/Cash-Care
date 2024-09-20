@@ -1,6 +1,7 @@
 import 'package:cashcarefrontend/controllers/budget/debt_conroller.dart';
 import 'package:cashcarefrontend/theme/theme_constant.dart';
 import 'package:cashcarefrontend/utils/appbar/cashcare_bar.dart';
+import 'package:cashcarefrontend/utils/gaps/Xgap.dart';
 import 'package:cashcarefrontend/utils/validators/validation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -26,6 +27,7 @@ class AddDebtForm extends StatelessWidget {
               child: Column(
                 children: [
                   SizedBox(height: 20),
+                  gapY('md'),
                   TextFormField(
                     validator: (value) => WwValidator.isInputEmpty(value),
                     controller: controller.title,

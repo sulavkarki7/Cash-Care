@@ -1,4 +1,5 @@
 import 'package:cashcarefrontend/routes/routes.dart';
+import 'package:cashcarefrontend/theme/theme_constant.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -11,27 +12,17 @@ class WelcomeScreen extends StatelessWidget {
       Get.toNamed(CashCareRoute.getLoginRoute());
     }
 
-    Color getColor(Set<MaterialState> states) {
-      const Set<MaterialState> interactiveStates = <MaterialState>{
-        MaterialState.pressed,
-        MaterialState.hovered,
-        MaterialState.focused,
-      };
-      if (states.any(interactiveStates.contains)) {
-        return Colors.green;
-      }
-      return Colors.blue;
-    }
-
     return Theme(
         data: ThemeData.dark(),
         child: Scaffold(
+          backgroundColor: Colors.black,
           body: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
+                SizedBox(height: Get.height * 0.1),
                 Container(
-                    margin: const EdgeInsets.only(bottom: 25),
+                    margin: const EdgeInsets.only(bottom: 5),
                     child: const Text(
                       "Cash Care",
                       style: TextStyle(
@@ -39,16 +30,13 @@ class WelcomeScreen extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                           fontSize: 45.0),
                     )),
-
                 Container(
-                    margin: const EdgeInsets.only(bottom: 25),
                     child: const Text(
-                      "Money Management without \n the migraines.",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(color: Colors.white, fontSize: 20.0),
-                    )),
-                SizedBox(height: 30),
-
+                  "Money Management without \n the migraines.",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(color: Colors.white, fontSize: 20.0),
+                )),
+                SizedBox(height: Get.height * 0.04),
                 GestureDetector(
                   onTap: visitLogin,
                   child: Container(
@@ -65,26 +53,26 @@ class WelcomeScreen extends StatelessWidget {
                         Text(
                           'Get Started',
                           style: TextStyle(
-                            color: Colors.white, // Adjust text color
+                            color: ccWhite,
                             fontWeight: FontWeight.bold,
                             fontSize: 18,
                           ),
                         ),
                         Icon(
                           Icons.arrow_forward,
-                          color: Colors.white, // Adjust icon color
+                          color: ccWhite,
                           size: 24,
                         ),
                       ],
                     ),
                   ),
                 ),
-                SizedBox(
-                    height: 30), // Add space between the button and the image
+                SizedBox(height: Get.height * 0.04),
                 Container(
-                  constraints: BoxConstraints(maxHeight: 800),
+                  constraints: BoxConstraints(maxHeight: 500),
                   child: Image.asset(
-                    'assets/mainbanner.png',
+                    // 'assets/mainbanner.png',
+                    'assets/mainbanner3.png',
                     fit: BoxFit.cover,
                   ),
                 ),

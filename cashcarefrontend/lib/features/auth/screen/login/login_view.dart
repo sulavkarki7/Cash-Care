@@ -13,7 +13,7 @@ class Login extends StatelessWidget {
             backgroundColor: Colors.grey[900],
             appBar: AppBar(
                 centerTitle: true,
-                surfaceTintColor: Colors.black,
+                surfaceTintColor: Colors.grey[900],
                 automaticallyImplyLeading: false,
                 title: const Text(
                   'Cash Care',
