@@ -62,7 +62,7 @@ class _MyInfoScreenState extends State<MyInfoScreen> {
                 height: Get.height * 0.2,
                 width: Get.width * 0.98,
                 decoration: BoxDecoration(
-                  color: grey.withOpacity(0.2),
+                  color: grey.withOpacity(0.1),
                   borderRadius: BorderRadius.circular(5),
                 ),
                 child: Center(
