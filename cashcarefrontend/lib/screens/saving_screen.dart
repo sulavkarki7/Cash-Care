@@ -58,7 +58,14 @@ class _SavingScreenState extends State<SavingScreen> {
     return Theme(
         data: myTheme,
         child: Scaffold(
+          backgroundColor: Colors.grey[900],
           appBar: AppBar(
+            leading: IconButton(
+              icon: const Icon(Icons.arrow_back_ios),
+              onPressed: () {
+                Get.back();
+              },
+            ),
             title: Text('Saving Goal'),
             actions: [
               if (!isEditing)

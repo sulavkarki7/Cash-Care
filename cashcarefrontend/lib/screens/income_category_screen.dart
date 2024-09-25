@@ -42,6 +42,12 @@ class _IncomeCategoryScreenState extends State<IncomeCategoryScreen> {
       data: myTheme,
       child: Scaffold(
         appBar: AppBar(
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back_ios),
+            onPressed: () {
+              Get.back();
+            },
+          ),
           title: Text(widget.category),
         ),
         backgroundColor: Colors.grey[900],
