@@ -9,6 +9,12 @@ class TermsAndConditionsPage extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.grey[900],
         appBar: AppBar(
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back_ios),
+            onPressed: () {
+              Get.back();
+            },
+          ),
           surfaceTintColor: Colors.black,
           title: const Text('Terms and Conditions'),
         ),

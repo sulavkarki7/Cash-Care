@@ -1,9 +1,6 @@
-import 'package:cashcarefrontend/constants/app_constant.dart';
-import 'package:cashcarefrontend/controllers/auth/logout_controller.dart';
-import 'package:cashcarefrontend/features/auth/screen/terms_&_conditions/terms_and_conditions_page.dart';
 import 'package:cashcarefrontend/models/user.dart';
 import 'package:cashcarefrontend/navigation_menu.dart';
-import 'package:cashcarefrontend/theme/theme_constant.dart';
+
 import 'package:cashcarefrontend/utils/forms/change_password.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -42,6 +39,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
     return Scaffold(
       backgroundColor: Colors.grey[900],
       appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios),
+          onPressed: () {
+            Get.back();
+          },
+        ),
         iconTheme: const IconThemeData(color: Colors.white),
         title: const Text(
           'Settings',
