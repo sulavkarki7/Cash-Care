@@ -1,7 +1,6 @@
 import 'package:cashcarefrontend/constants/app_colors.dart';
 import 'package:cashcarefrontend/models/bank_account.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class BankCard extends StatelessWidget {
   final BankAccount bankAccount;
@@ -41,10 +40,10 @@ class BankCard extends StatelessWidget {
                       ),
                       SizedBox(height: 10),
                       Text(
-                        //'**** ${bankAccount.accountNumber?.substring(bankAccount.accountNumber?.length ?? -4)}',
-                        '12312*******',
+                        "  ${bankAccount.accountNumber!.length > 5 ? '${bankAccount.accountNumber!.substring(0, 4)}******' : bankAccount.accountNumber} ",
                         style: TextStyle(
                           fontSize: 16,
+                          fontWeight: FontWeight.bold,
                           color: Colors.grey[600],
                         ),
                       ),
