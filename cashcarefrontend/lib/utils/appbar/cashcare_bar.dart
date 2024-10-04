@@ -65,7 +65,13 @@ class CashCareBar {
           icon: const Icon(Icons.person),
           color: Colors.white,
           onPressed: () {
-            Get.to(() => ProfileScreen());
+            // Get.to(() => ProfileScreen());
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ProfileScreen(),
+              ),
+            );
           },
         ),
       ],
