@@ -24,12 +24,7 @@ class TermsAndConditionsPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // const Text(
-                //   'Terms and Conditions',
-                //   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                // ),
-                // SizedBox(height: Get.height * 0.02),
-                // style: TextStyle(fontSize: 16),
+                
                 SizedBox(height: Get.height * 0.02),
                 const Text(
                   'Welcome to Cash Care. By using this application, you agree to comply with and be bound by the following terms and conditions of use.',
