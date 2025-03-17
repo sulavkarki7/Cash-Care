@@ -16,10 +16,10 @@ Key Features
 🔒 Secure & Private – Your financial data stays protected with robust security measures.
 
 Technology Stack
-Frontend: Flutter (Dart)
-State Management: BLoC
-Database: Local storage / SQLite (if applicable)
-Version Control: Git, GitHub
+Frontend: Flutter (Dart),
+State Management: BLoC,
+Database: Local storage / SQLite (if applicable),
+Version Control: Git, GitHub,
 Future Enhancements
 🚀 Cloud Sync & Backup – Securely store data across devices.
 📈 AI-Based Financial Insights – Get personalized recommendations based on spending patterns.
