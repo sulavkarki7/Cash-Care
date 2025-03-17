@@ -18,7 +18,7 @@ Key Features
 Technology Stack
 Frontend: Flutter (Dart),
 State Management: BLoC,
-Database: Local storage / SQLite (if applicable),
+Database: SQLite,
 Version Control: Git, GitHub,
 Future Enhancements
 🚀 Cloud Sync & Backup – Securely store data across devices.
